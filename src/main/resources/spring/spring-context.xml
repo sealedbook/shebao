@@ -18,5 +18,4 @@
 
     <bean class="net.vicp.sealedbook.support.spring.SpringContextHolder" lazy-init="false"/>
 
-
 </beans>
