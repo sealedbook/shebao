@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+    PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+    "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库驱动 -->
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <jdbcConnection
+            driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://localhost:3306/old_person"
+            userId="root"
+            password="root">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="net.vicp.sealedbook.dao.auto.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+            <property name="rootClass" value="net.vicp.sealedbook.common.utils.BaseEntity"/>
+            <property name="javaExampleTargetPackage" value="net.vicp.sealedbook.dao.auto.criteria"/>
+            <property name="javaExampleTargetProject" value="src/main/java"/>
+        </javaModelGenerator>
+
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="mybatis.auto.mapping" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="net.vicp.sealedbook.dao.auto.mapper"
+            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 要生成哪些表-->
+        <table tableName="old_person">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+            <columnOverride column="sex" javaType="net.vicp.sealedbook.common.enums.GenderEnum" />
+            <columnOverride column="type" javaType="net.vicp.sealedbook.enums.OldPersonTypeEnum" />
+            <columnOverride column="nationality" javaType="net.vicp.sealedbook.enums.NationalityEnum" />
+            <columnOverride column="sflx" javaType="net.vicp.sealedbook.enums.OldPersonIdentityTypeEnum" />
+            <columnOverride column="status" javaType="net.vicp.sealedbook.enums.OldPersonStatusEnum" />
+            <columnOverride column="ff_status" javaType="net.vicp.sealedbook.enums.OldPersonPushStatusEnum" />
+            <columnOverride column="modeling_status" javaType="net.vicp.sealedbook.enums.OldPersonModelingStatusEnum" />
+        </table>
+
+        <table tableName="cycle_info">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+        </table>
+
+        <table tableName="notice_info">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+            <columnOverride column="is_deleted" javaType="net.vicp.sealedbook.common.enums.YesNoEnum" />
+        </table>
+
+        <table tableName="notice_receive">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+        </table>
+    </context>
+
+</generatorConfiguration>  

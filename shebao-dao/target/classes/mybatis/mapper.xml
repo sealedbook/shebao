@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+
+<configuration>
+
+    <typeHandlers>
+        <typeHandler handler="net.vicp.sealedbook.common.utils.IntegerEnumTypeHandler" javaType="net.vicp.sealedbook.common.enums.YesNoEnum" />
+        <typeHandler handler="net.vicp.sealedbook.common.utils.IntegerEnumTypeHandler" javaType="net.vicp.sealedbook.common.enums.GenderEnum" />
+
+        <typeHandler handler="net.vicp.sealedbook.common.utils.IntegerEnumTypeHandler" javaType="net.vicp.sealedbook.enums.OldPersonTypeEnum" />
+        <typeHandler handler="net.vicp.sealedbook.common.utils.IntegerEnumTypeHandler" javaType="net.vicp.sealedbook.enums.NationalityEnum" />
+        <typeHandler handler="net.vicp.sealedbook.common.utils.IntegerEnumTypeHandler" javaType="net.vicp.sealedbook.enums.OldPersonIdentityTypeEnum" />
+        <typeHandler handler="net.vicp.sealedbook.common.utils.IntegerEnumTypeHandler" javaType="net.vicp.sealedbook.enums.OldPersonStatusEnum" />
+        <typeHandler handler="net.vicp.sealedbook.common.utils.IntegerEnumTypeHandler" javaType="net.vicp.sealedbook.enums.OldPersonPushStatusEnum" />
+        <typeHandler handler="net.vicp.sealedbook.common.utils.IntegerEnumTypeHandler" javaType="net.vicp.sealedbook.enums.OldPersonModelingStatusEnum" />
+    </typeHandlers>
+
+</configuration>
+
