@@ -13,4 +13,9 @@ public class SystemConst {
     /** Android IMEI request param key */
     public static final String TERMINAL_IMEI = "TERMINAL_IMEI";
 
+    /** 系统 用户session Key */
+    public static final String SESSION_USER_KEY = "SESSION_USER";
+
+
+    public static final String SERVLET_OPERATOR_TOKEN_KEY_PREFIX = "SERVLET_OPERATOR_TOKEN_KEY_PREFIX_";
 }

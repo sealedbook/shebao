@@ -42,6 +42,43 @@
         </javaClientGenerator>
 
         <!-- 要生成哪些表-->
+        <table tableName="sys_security_user" domainObjectName="SystemUser">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+            <columnOverride column="sex" javaType="net.vicp.sealedbook.common.enums.GenderEnum" />
+        </table>
+
+        <table tableName="sys_security_role" domainObjectName="SystemRole">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+        </table>
+
+        <table tableName="sys_security_ur_map" domainObjectName="SystemRoleUserMapper">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+        </table>
+
+        <table tableName="sys_security_rf_map" domainObjectName="SystemRoleFunctionMapper">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+        </table>
+
+        <table tableName="sys_security_resource" domainObjectName="SystemResource">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+            <columnOverride column="is_deleted" javaType="net.vicp.sealedbook.common.enums.YesNoEnum" />
+            <columnOverride column="resource_type" javaType="net.vicp.sealedbook.enums.SystemResourceTypeEnum" />
+        </table>
+
+        <table tableName="sys_security_function" domainObjectName="SystemFunction">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+            <columnOverride column="is_deleted" javaType="net.vicp.sealedbook.common.enums.YesNoEnum" />
+        </table>
+
+        <table tableName="sys_security_module" domainObjectName="SystemModule">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+            <columnOverride column="is_deleted" javaType="net.vicp.sealedbook.common.enums.YesNoEnum" />
+        </table>
+
+        <table tableName="sys_security_mf_map" domainObjectName="SystemModuleFunctionMapper">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+        </table>
+
         <table tableName="old_person">
             <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
             <columnOverride column="sex" javaType="net.vicp.sealedbook.common.enums.GenderEnum" />
